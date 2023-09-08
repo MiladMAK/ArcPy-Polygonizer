@@ -24,8 +24,6 @@ These proposed algorithms, upon being completed, can be converted to tools in Ar
 # Algorithm 1
 #1 is created following the documentation at https://atd-dts.gitbook.io/atd-geospatial/miscelaneous/vision-zero-polygon-maintenance.
 
-# Algorithm 2
-#2 is created by copying the content of the QGIS plugin and removing the parts related to the User Interface and sliders. 
 
 # Process
 Creating buffers first and then creating intermediate sections can be a valid approach, and it may sometimes simplify the logic. However, whether it's better to create buffers before or after creating intermediate sections depends on your project's specific requirements and constraints.
