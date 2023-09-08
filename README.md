@@ -7,9 +7,11 @@ A working QGIS plugin (https://github.com/frankhereford/qgis-polygonizer)https:/
 # The QGIS Plugin Workflow
 To create and correct polygons at any ASMP level (https://austin.maps.arcgis.com/apps/webappviewer/index.html?id=2a3c539da76b4f49906a3524ed4a2cc9) the workflow comprises:
 1- Preparing a reference street network in QGIS (calling CTN (https://austin.maps.arcgis.com/apps/mapviewer/index.html?layers=52347b99aba448e0a7e5d4b9a5cb09f9&layerId=0) layer through AGOL)
-2- Running the plugin which has sliders to choose the width, length and segment length
-3- Edit the created polygons inside QGIS
-4- Transfer the polygons (e.g., as a shapefile) to ArcPro 
-5- Push the new sets of polygons (created or corrected) to the maint database inside **ATD_ADMIN.vision_zero_polygons**
+2- Select (active selection by drawing a rectangle around the chosen streets) the chosen streets
+3- Running the plugin which has sliders to choose the width, length and segment length
+4- Edit the created polygons inside QGIS
+5- Transfer the polygons (e.g., as a shapefile) to ArcPro 
+6- Push the new sets of polygons (created or corrected) to the maint database inside **ATD_ADMIN.vision_zero_polygons**
 
-Multiple drawbacks are faced 
+ # Problem
+ Multtiple shortcoming might occure during the process of using QGIS plugin which can be solved with some workarounds. However, this might not be quickly achiavble for a non-experienced analyst.
