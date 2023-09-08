@@ -22,4 +22,7 @@ Multiple shortcomings might occur while using the QGIS plugin, which can be solv
 These proposed algorithms, upon being completed, can be converted to tools in ArcPro where the user needs only to provide the street network and intersection layers. The rest will be taken care of through the program.
 
 # Algorithm 1
-#1 is created following the documentation at https://atd-dts.gitbook.io/atd-geospatial/miscelaneous/vision-zero-polygon-maintenance 
+#1 is created following the documentation at https://atd-dts.gitbook.io/atd-geospatial/miscelaneous/vision-zero-polygon-maintenance.
+
+# Algorithm 2
+#2 is created by copying the content of the QGIS plugin and removing the parts related to the User Interface and sliders. 
