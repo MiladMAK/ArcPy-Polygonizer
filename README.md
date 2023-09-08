@@ -21,8 +21,8 @@ Multiple shortcomings might occur while using the QGIS plugin, which can be solv
 # Proposed solution through ArcPy Polygonizer
 These proposed algorithms, upon being completed, can be converted to tools in ArcPro where the user needs only to provide the street network and intersection layers. The rest will be taken care of through the program.
 
-# Algorithm 1
-#1 is created following the documentation at https://atd-dts.gitbook.io/atd-geospatial/miscelaneous/vision-zero-polygon-maintenance.
+# Algorithm 
+ArcPy Polygonizer is created following the documentation at https://atd-dts.gitbook.io/atd-geospatial/miscelaneous/vision-zero-polygon-maintenance.
 
 
 # Process
