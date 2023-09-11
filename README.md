@@ -49,3 +49,10 @@ Complex Intersections: If your dataset contains complex intersections with multi
 Choosing these approaches often depends on your project's specific requirements and constraints. Creating intermediate sections first can be a good strategy if your project primarily focuses on the intersections. However, creating buffers first may be preferable if you need buffers for other purposes or want to maintain a complete buffer coverage.
 
 Ultimately, the decision should align with the goals of your project and how you plan to use the resulting spatial data.
+
+# Sample data:
+
+The sample data on which the code is tested is as follows. 
+
+![image](https://github.com/MiladMAK/ArcPy-Polygonizer/assets/134707080/d272105b-36aa-4933-94e7-6b796e54b241)
+
