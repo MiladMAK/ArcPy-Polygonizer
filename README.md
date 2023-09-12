@@ -56,3 +56,5 @@ The sample data on which the code is tested is as follows.
 
 ![image](https://github.com/MiladMAK/ArcPy-Polygonizer/assets/134707080/d272105b-36aa-4933-94e7-6b796e54b241)
 
+The sample data comprises a line segment extracted from CTN and a point dataset extracted from intersections between line segments.
+
