@@ -89,7 +89,12 @@ with arcpy.da.SearchCursor(joined_layer, ["SHAPE@", "STREET_NAME", "STREET_LEVEL
                 insert_cursor.insertRow([single_part_geometry, intersection_id, street_name, street_level])
 
 
+# Calculate shape_length and shape_area for IntersectionPolygons
+# Calculate shape_length and shape_area for IntersectionPolygons
+#arcpy.management.CalculateField(intersection_fc, "SHAPE@LENGTH", "!SHAPE!.length", "PYTHON3")
+#arcpy.management.CalculateField(intersection_fc, "SHAPE@AREA", "!SHAPE!.area", "PYTHON3")
 # Loop through street segments to create segmented buffers and intermediate segments
+
 with arcpy.da.SearchCursor(street_layer, ["SHAPE@", "OBJECTID"]) as cursor:
     for row in cursor:
         geometry = row[0]
