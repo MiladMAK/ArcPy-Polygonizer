@@ -1,5 +1,5 @@
 # ArcPy-Polygonizer
-This is an attempt to replicate the QGIS plug-in called Polygonizer created by **Frank Hereford** at the City of Austin Transportation and Public Works Department
+This attempts to replicate the QGIS plug-in called Polygonizer created by **Frank Hereford** at the City of Austin Transportation and Public Works Department. The two attempts (ArcPyPolygonizer) differ in some details but have the same structure.
 # Background from the QGIS plugin Repository 
 As part of the Austin Transportation and Public Works Department, the Vision Zero team operates a database of crashes in and around the Austin city limits. A point position tracks these crashes, and to analyze the city's roadways about crash location and crash severity, a set of polygons was created based on the street network. These polygons are of approximately equal area and are formed so that intersections are built into a single shape, and interconnecting roads between intersections are divided into equal segments. Aggregating crashes into these polygons makes comparisons between intersections and road segments possible.
 ![image](https://github.com/MiladMAK/ArcPy-Polygonizer/assets/134707080/7754d195-e970-4cea-8100-b7dea01b473e)
