@@ -59,7 +59,60 @@ The sample data on which the code is tested is as follows.
 The sample data comprises a line segment extracted from CTN and a point dataset extracted from intersections between line segments.
 
 # Current status:
-The algorithm (there are 2 of them, and the second one is more sophisticated) works, but there are a series of problems:
-- [ ] The segmented polygons are created but not split beyond the intersection points. For example, if a line segment does not encounter an intersection, the polygon will continue along the entire section:
+The algorithm (2 of them, and the second one is more sophisticated) works, but there are a series of problems. Some of the most important problems are explained after the picture:
+![image](https://github.com/MiladMAK/ArcPy-Polygonizer/assets/134707080/94b9f8cc-ebe2-47f6-98a8-fb717e2b7b10)
 
-![image](https://github.com/MiladMAK/ArcPy-Polygonizer/assets/134707080/44c7f697-6383-4d48-b0a2-8894cd6b7f9b)
+
+- [ ] The segmented polygons are created but not split beyond the intersection points. For example, if a line segment does not encounter an intersection (a point coming from the intersection layer), the polygon will continue along the entire section.
+- [ ] The intersection polygons are not created. While we have an initial point of starting with segmented polygons, there are no intersection polygons.
+- [ ] No shape-length and shape-area inside the IntersectionPolygons layer are all set to 0.
+
+# Code break-down:
+1. Import ArcPy and Set Environment Variables:
+
+The script starts by importing the arcpy module, which provides access to ArcGIS geospatial functionality.
+It also imports the env module from arcpy.
+The env.workspace variable is set to specify the geodatabase location where the operations will be performed.
+The env.outputCoordinateSystem variable is set to specify the coordinate system for the output data.
+arcpy.env.overwriteOutput is set to True, allowing the script to overwrite existing feature classes if they have the same name.
+
+2. Define Input Data Paths:
+
+street_layer and intersection_layer variables are set to specify the paths to two feature classes within the geodatabase. These feature classes represent street data and intersection data, respectively.
+
+3. Define Buffer Distances:
+
+The buffer_distances dictionary is defined, associating buffer distances with street levels.
+
+4. Create Feature Classes:
+
+Two new empty feature classes are created using arcpy.CreateFeatureclass_management. One is for segmented buffers (buffer_fc), and the other is for intersection polygons (intersection_fc). These feature classes will store the results of the operations.
+
+5. Add Fields to Feature Classes:
+
+Fields are added to both the buffer_fc and intersection_fc feature classes using arcpy.AddField_management. These fields include "STREET_NAME," "STREET_LEVEL," and "INTERSECTIONID."
+
+6. Spatial Join:
+
+The arcpy.analysis.SpatialJoin function is used to perform a spatial join operation between the intersection points and street layer. The result is stored in a new feature class called "JoinedIntersections."
+
+7. Loop Through Joined Data:
+
+A for loop iterates through the records in the "JoinedIntersections" feature class.
+For each record, it extracts relevant information such as geometry, street name, street level, and coordinates.
+It generates a unique intersection_id based on X and Y coordinates.
+If the geometry is multipart (e.g., an intersection with multiple parts), it splits it into single-part geometries and inserts them separately into the intersection_fc.
+If the geometry is already single-part, it inserts it as is into the intersection_fc.
+
+8. Calculate Shape Length and Shape Area:
+
+The script includes a commented-out code that calculates the shape length and shape area for the intersection polygons. However, this code is currently disabled (commented out).
+
+9. Loop Through Street Segments:
+
+Another for loop iterates through the street segments in the "street_layer" feature class.
+For each segment, it calculates a buffered geometry based on the street level and appends it to the "buffer_fc" feature class.
+
+Print a Message:
+
+The script concludes by printing "IntermediateSegments and Intersection Polygons created."
