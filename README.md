@@ -61,4 +61,5 @@ The sample data comprises a line segment extracted from CTN and a point dataset 
 # Current status:
 The algorithm (there are 2 of them, and the second one is more sophisticated) works, but there are a series of problems:
 - [ ] The segmented polygons are created but not split beyond the intersection points. For example, if a line segment does not encounter an intersection, the polygon will continue along the entire section:
+      
       ![image](https://github.com/MiladMAK/ArcPy-Polygonizer/assets/134707080/44c7f697-6383-4d48-b0a2-8894cd6b7f9b)
